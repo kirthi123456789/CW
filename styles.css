@@ -973,11 +973,12 @@ section h2::after {
 }
 
 .profile-photo-large {
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
 }
 
 .profile-image-large {
