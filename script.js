@@ -219,3 +219,33 @@ if (contactForm) {
         console.log('Form submitted:', formData);
     });
 }
+
+// Toggle Category for Tools Section
+function toggleCategory(header) {
+    const wrapper = header.parentElement;
+    const content = wrapper.querySelector('.category-content');
+    const expandIcon = header.querySelector('.expand-icon');
+    
+    // Toggle active class
+    wrapper.classList.toggle('active');
+    
+    // Toggle content visibility
+    if (wrapper.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        expandIcon.style.transform = 'rotate(180deg)';
+    } else {
+        content.style.maxHeight = '0';
+        expandIcon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Initialize first category as open
+document.addEventListener('DOMContentLoaded', () => {
+    const firstCategory = document.querySelector('.tool-category-wrapper');
+    if (firstCategory) {
+        const firstHeader = firstCategory.querySelector('.category-header');
+        if (firstHeader) {
+            toggleCategory(firstHeader);
+        }
+    }
+});
